@@ -35,68 +35,44 @@ def main():
     required=True, 
     help='The dataset to use.'
   )
-  parser.add_argument(
+
+  group = parser.add_mutually_exclusive_group()
+  
+  group.add_argument(
     '--kd', 
     type=str, 
     choices=[
       'bert_medium', 'bert_small', 'bert_mini', 'bert_tiny', 'distilbert', 'tinybert_6', 'tinybert_4', 
       'tinybert_ahe', 'tinybert_ah', 'tinybert_ae', 'tinybert_he', 'tinybert_a', 'tinybert_h', 'tinybert_e'
     ],
-    required=False, 
     help='The distilled model to use.'
   )
-  parser.add_argument(
+  group.add_argument(
     '--up', 
     type=int, 
     choices=[20, 40, 60, 80], 
-    required=False, 
     help='The unstructured pruning amount to use.'
   )
-  parser.add_argument(
+  group.add_argument(
     '--sp', 
     type=int, 
     choices=[20, 40, 60, 80], 
-    required=False, 
     help='The structured pruning amount to use.'
   )
-  parser.add_argument(
+  group.add_argument(
     '--qn', 
     type=str, 
     choices=['dq', 'sq', 'qat'], 
-    required=False, 
     help='The quantization method to use.'
   )
-  parser.add_argument(
+  group.add_argument(
     '--vt', 
     type=int, 
     choices=[100, 75, 50, 25], 
-    required=False, 
     help='The vocabulary transfer size to use.'
   )
 
   args = parser.parse_args()
-
-  # Check the arguments
-  if {args.kd, args.up, args.sp, args.qn, args.vt} == {None}:
-    pass
-
-  elif args.kd is not None and {args.up, args.sp, args.qn, args.vt} == {None}:
-    pass
-
-  elif args.up is not None and {args.kd, args.sp, args.qn, args.vt} == {None}:
-    pass
-
-  elif args.sp is not None and {args.kd, args.up, args.qn, args.vt} == {None}:
-    pass
-
-  elif args.qn is not None and {args.kd, args.up, args.sp, args.vt} == {None}:
-    pass
-
-  elif args.vt is not None and {args.kd, args.up, args.sp, args.qn} == {None}:
-    pass
-
-  else:
-    raise NotImplementedError
     
   # Set the hyperparameters
   DATA = args.data
