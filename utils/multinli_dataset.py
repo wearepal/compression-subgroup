@@ -109,7 +109,7 @@ class MultiNLIDataset(ConfounderDataset):
             padding='max_length',
             truncation=True,
             max_length=self.max_length,
-            return_tensors='pt',
+            return_tensors='pt'
         )
         
         try:

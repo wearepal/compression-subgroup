@@ -29,8 +29,8 @@ def prepare_confounder_data(path, dataset, tokenizer=None):
 
     elif dataset == 'scotus':
 
-        from scotus_dataset import ScotusDataset
-        full_data = ScotusDataset(
+        from scotus_dataset import SCOTUSDataset
+        full_data = SCOTUSDataset(
             root_dir=path,
             target_name='label',
             confounder_names=['decision_direction'],

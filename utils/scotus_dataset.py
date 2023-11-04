@@ -7,7 +7,7 @@ from confounder_dataset import ConfounderDataset
 
 
 # Defined classes
-class ScotusDataset(ConfounderDataset):
+class SCOTUSDataset(ConfounderDataset):
     
     def __init__(self, root_dir, target_name, confounder_names, tokenizer):
         
@@ -55,7 +55,7 @@ class ScotusDataset(ConfounderDataset):
             padding='max_length',
             truncation=True,
             max_length=self.max_length,
-            return_tensors='pt',
+            return_tensors='pt'
         )
         
         try:
