@@ -1,6 +1,6 @@
 # Are Compressed Language Models Less Subgroup Robust?
 
-Official code for the paper titled **Are Compressed Language Models Less Subgroup Robust?** presented at **EMNLP 2023** - Main Track.
+Official code for the paper titled [**Are Compressed Language Models Less Subgroup Robust?**](https://aclanthology.org/2023.emnlp-main.983/) presented at **EMNLP 2023** - Main Track.
 
 > To reduce the inference cost of large language models, model compression is increasingly used to create smaller scalable models. However, little is known about their robustness to minority subgroups defined by the labels and attributes of a dataset. In this paper, we investigate the effects of 18 different compression methods and settings on the subgroup robustness of BERT language models. We show that worst-group performance does not depend on model size alone, but also on the compression method used. Additionally, we find that model compression does not always worsen the performance on minority subgroups. Altogether, our analysis serves to further research into the subgroup robustness of model compression.
 
@@ -29,5 +29,21 @@ The full options can be found in the argparse section of the [script](https://gi
 
 ## Citation
 ```
-TBA soon
+@inproceedings{gee-etal-2023-compressed,
+    title = "Are Compressed Language Models Less Subgroup Robust?",
+    author = "Gee, Leonidas  and
+      Zugarini, Andrea  and
+      Quadrianto, Novi",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.983",
+    pages = "15859--15868",
+    abstract = "To reduce the inference cost of large language models, model compression is increasingly used to create smaller scalable models. However, little is known about their robustness to minority subgroups defined by the labels and attributes of a dataset. In this paper, we investigate the effects of 18 different compression methods and settings on the subgroup robustness of BERT language models. We show that worst-group performance does not depend on model size alone, but also on the compression method used. Additionally, we find that model compression does not always worsen the performance on minority subgroups. Altogether, our analysis serves to further research into the subgroup robustness of model compression.",
+}
 ```
